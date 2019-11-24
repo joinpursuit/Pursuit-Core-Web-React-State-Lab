@@ -27,6 +27,11 @@ class App extends React.Component{
   
   handlePayPoints = () =>{
     let {counter, points } = this.state;
+    if (counter < 10){
+      window.alert("not enough points")
+      return;
+
+    }
     
     this.setState ({
       counter: counter - 10,
@@ -41,10 +46,21 @@ class App extends React.Component{
       points: 1
     })
   }
+
+  scoreCheck = () =>{
+    
+    this.setState(
+      this.handleClickReset()
+    )
+  }
   
   render(){
     let counter = this.state.counter
     let points = this.state.points
+    if (counter >= 100){
+      window.alert("you win")
+      this.scoreCheck();
+    }
     return (
       <div className="App">
         <p>Current Score: {counter}</p>
