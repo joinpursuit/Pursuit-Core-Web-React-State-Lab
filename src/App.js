@@ -40,6 +40,11 @@ else{
   window.alert("You can't afford that")
 }
 }
+
+playAgain = () => {
+  window.location.reload()
+}
+
 render() {
     let counter = this.state.counter;
     if(counter >= 100){
