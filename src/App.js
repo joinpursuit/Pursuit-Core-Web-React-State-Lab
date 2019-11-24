@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import { thisExpression } from '@babel/types';
 
 class App extends React.Component {
   constructor() {
