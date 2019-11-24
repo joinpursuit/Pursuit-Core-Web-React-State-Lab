@@ -42,10 +42,18 @@ class App extends React.Component {
     })
   }
 
+  replay = () => {
+    window.location.reload();
+  }
+
     render() {
       let counter = this.state.counter
       if(counter >= 100) {
-        return(<h1>You won!</h1>)
+        return(
+          <div>
+          <h1>You won!</h1>
+          <button onClick={this.replay}>Play Again</button>
+          </div>)
 
       } else {
         return (
