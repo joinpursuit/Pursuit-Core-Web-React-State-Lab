@@ -19,9 +19,10 @@ class App extends React.Component {
   handleClick = (event) => {
     // console.log("the button was clicked", event)
     let counter = this.state.counter;
+    let pay = this.state.pay;
     // let count = this.state.count
     this.setState({
-      counter: counter + 1,
+      counter: counter + pay,
     })
   }
 handleAddBy = (event) => {
@@ -33,21 +34,31 @@ if(counter >= price){
  this.setState({
 counter: counter - price,
 pay: pay + 1})
-}else{
+}
+// else if(counter >= 100){
+else{
   window.alert("You can't afford that")
 }
 }
-
-  render() {
+render() {
     let counter = this.state.counter;
+    if(counter >= 100){
+      return (
+        <div className="won">
+        <h2>You Win!</h2>
+        <button className="playButton" onClick={this.playAgain}>Play Again!</button>
+        </div>
+      )
+      
+    }else{
     return(
       <div className="App">
         <p>Current Score: {counter}</p>
         <button onClick={this.handleClick}>+{this.state.pay}</button>
         <button onClick={this.handleAddBy}>Pay 10 points to change from +{this.state.pay} to +{this.state.pay + 1}</button>
       </div>
-
     )
+    }
   }
 }
 
