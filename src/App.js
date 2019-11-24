@@ -1,26 +1,54 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// Display the current score to the user
+// Clicking a button increments the score by one
+// Have a button where the user can spend points to increase the value of each click
+// Display a warning if the user doesn't have enough points to spend
+// When the user has 100 points, display a victory screen
+// Have a button that resets the game
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      counter: 0,
+      pay: 1,
+      price: 10
+    }
+  }
+  handleClick = (event) => {
+    // console.log("the button was clicked", event)
+    let counter = this.state.counter;
+    // let count = this.state.count
+    this.setState({
+      counter: counter + 1,
+    })
+  }
+handleAddBy = (event) => {
+let pay = this.state.pay;
+let price = this.state.price;
+let counter = this.state.counter;
+
+if(counter >= price){
+ this.setState({
+counter: counter - price,
+pay: pay + 1})
+}else{
+  window.alert("You can't afford that")
+}
+}
+
+  render() {
+    let counter = this.state.counter;
+    return(
+      <div className="App">
+        <p>Current Score: {counter}</p>
+        <button onClick={this.handleClick}>+{this.state.pay}</button>
+        <button onClick={this.handleAddBy}>Pay 10 points to change from +{this.state.pay} to +{this.state.pay + 1}</button>
+      </div>
+
+    )
+  }
 }
 
 export default App;
