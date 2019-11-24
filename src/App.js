@@ -6,31 +6,44 @@ class App extends React.Component {
     super();
     this.state = {
       count: 0,
+      life: 1
     };
   }
 
   addOne = () => {
     //  console.log('button clicked');
     this.setState({
-      count: this.state.count + 1
+      count: this.state.count + this.state.life
     });
   };
 
+  deal = () => {
+    let souls = 10;
+    let count = this.state.count;
+    let life = this.state.life;
 
-  subtract = () => {
-    this.setState({
-      counter: this.state.count - 10
-    });
-  };
+    console.log(count);
+
+    if (count >= 10) {
+      this.setState({
+        count: count - souls,
+        life: life + 1
+      })
+    } else {
+      window.alert('Your time is up')
+    }
+
+  }
+
 
   render() {
-    const { count } = this.state;
+    const { count, life } = this.state;
 
     return (
       <div className="App">
         <h2>Current Score: {count}</h2>
-        <button onClick={this.addOne}>{count}</button>
-        <button onClick={this.subtract}>Pay 10 points to change from{+count} to {count + 1}</button>
+        <button onClick={this.addOne}>+{life}</button>
+        <button onClick={this.deal}>Pay 10 points to change from +{life} to +{life + 1}</button>
       </div >
     );
   }
