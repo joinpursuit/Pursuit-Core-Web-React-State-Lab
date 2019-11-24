@@ -9,7 +9,7 @@ class App extends React.Component {
       value: 1
     }
   }
-  handleClick = (event) => {
+  increaseScore = (event) => {
     let score = this.state.score;
     let value = this.state.value;
 
@@ -34,8 +34,28 @@ class App extends React.Component {
 
     if (score >= 10) {
         this.increaseValue()
+    }else {
+      window.alert('You cannot afford that.')
     }
     
+  }
+
+  handleClick = (event) => {
+    let score = this.state.score;
+
+    if (score < 100) {
+      this.increaseScore()
+    }else if (score >= 100) {
+      this.winMessage()
+      this.createReset()
+    }
+  }
+  createReset = (event) =>{
+    let reset = document.createElement('button')
+    reset.innerText = 'Restart'
+  }
+  winMessage = (event) => {
+    window.alert ('You won!')
   }
 
   render() {
