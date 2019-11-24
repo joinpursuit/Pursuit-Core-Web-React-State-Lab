@@ -47,12 +47,18 @@ class App extends React.Component {
       this.increaseScore()
     }else if (score >= 100) {
       this.winMessage()
-      this.createReset()
     }
   }
   createReset = (event) =>{
-    let reset = document.createElement('button')
-    reset.innerText = 'Restart'
+    let score = this.state.score;
+    let value = this.state.value;
+    let para = document.querySelector('#print')
+    para.innerText=" "
+
+    this.setState({
+      score: score = 0,
+      value: value = 1
+    })
   }
   winMessage = (event) => {
     let para = document.querySelector('#print')
@@ -65,8 +71,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <p>{score}</p>
-        <button onClick={this.handleClick}>Click Me!</button>
+        <button onClick={this.handleClick}>+{value}</button>
         <button onClick={this.checkValue}>Spend 10 points to increase button value from +{value} to +{value + 1}</button>
+        <button onClick={this.createReset}> Reset</button>
         <p id='print'></p>
       </div>
     );
