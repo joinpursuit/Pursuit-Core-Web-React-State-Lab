@@ -33,16 +33,12 @@ class App extends React.Component {
     }
 
     handleClearScore = () => {
-      let {count, countIncrement} = this.state
       this.setState({
-        count: count - count,
-        countIncrement: countIncrement - (countIncrement - 1)
+        count: 0,
+        countIncrement: 1
       })
     }
-    restartGame = () => {
-      window.location.reload()
-    }
-    
+
     render() {
     let {count, countIncrement, incrementToll} = this.state
 
@@ -53,7 +49,7 @@ class App extends React.Component {
             <h1>Current Score: {count}</h1>
           </div>
           <div>
-            <button onClick= {this.restartGame}>Restart Game</button>
+            <button onClick= {this.handleClearScore}>Restart Game</button>
           </div>
           <div>
             <h3>You Win!!!</h3>
