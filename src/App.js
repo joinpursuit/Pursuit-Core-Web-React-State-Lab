@@ -55,7 +55,8 @@ class App extends React.Component {
     reset.innerText = 'Restart'
   }
   winMessage = (event) => {
-    window.alert ('You won!')
+    let para = document.querySelector('#print')
+    para.innerText = 'You won'
   }
 
   render() {
@@ -66,6 +67,7 @@ class App extends React.Component {
         <p>{score}</p>
         <button onClick={this.handleClick}>Click Me!</button>
         <button onClick={this.checkValue}>Spend 10 points to increase button value from +{value} to +{value + 1}</button>
+        <p id='print'></p>
       </div>
     );
   }
