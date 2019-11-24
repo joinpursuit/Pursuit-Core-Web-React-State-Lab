@@ -58,8 +58,14 @@ class App extends React.Component{
     let counter = this.state.counter
     let points = this.state.points
     if (counter >= 100){
-      window.alert("you win")
-      this.scoreCheck();
+      // window.alert("you win")
+      return(
+        <div className="App">
+          <p>You Win!!!!!!</p>
+          <button onClick = {this.handleClickReset}>Play Again</button>
+        </div>
+
+      )
     }
     return (
       <div className="App">
