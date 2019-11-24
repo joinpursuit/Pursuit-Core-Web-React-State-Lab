@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { thisExpression } from '@babel/types';
 
 class App extends React.Component {
   constructor() {
@@ -32,20 +33,36 @@ class App extends React.Component {
     } else {
       window.alert('Your time is up')
     }
+  }
 
+  secondChance = () => {
+    this.setState({
+      count: 0,
+      life: 1
+    })
   }
 
 
   render() {
     const { count, life } = this.state;
 
-    return (
-      <div className="App">
-        <h2>Current Score: {count}</h2>
-        <button onClick={this.addOne}>+{life}</button>
-        <button onClick={this.deal}>Pay 10 points to change from +{life} to +{life + 1}</button>
-      </div >
-    );
+    if (count >= 100) {
+      return (
+        <div className='App'>
+          <h2>Current Score: {count}</h2>
+          <h3>You Won</h3>
+          <button onClick={this.secondChance}>New Deal</button>
+        </div>
+      )
+    } else {
+      return (
+        <div className="App">
+          <h2>Current Score: {count}</h2>
+          <button onClick={this.addOne}>+{life}</button>
+          <button onClick={this.deal}>Pay 10 points to change from +{life} to +{life + 1}</button>
+        </div >
+      );
+    }
   }
 }
 
