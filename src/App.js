@@ -6,6 +6,8 @@ class App extends React.Component {
     super();
     this.state = {
       counter: 0,
+      currCount: counter,
+      nextCount: counter +1
     }
   }
 
@@ -15,7 +17,7 @@ class App extends React.Component {
       counter: counter + 1
     })
   }
-  
+
   subClick = (event) => {
     let { counter } = this.state;
     this.setState({
