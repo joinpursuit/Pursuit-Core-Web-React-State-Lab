@@ -59,7 +59,7 @@ class App extends React.Component {
         return (
           <div className="App">
             <p>{this.state.counter}</p>
-            <button onClick={this.handleClick}>+</button>
+            <button onClick={this.handleClick}>+{this.state.payFor}</button>
             <button onClick={this.pay}>Pay 10 points to change +{this.state.payFor} to +{this.state.payFor + 1}</button>
             <button onClick={this.restart}>Restart</button>
           </div>
