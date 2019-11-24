@@ -7,7 +7,13 @@ class App extends React.Component {
     super();
     this.state = {
       counter: 0,
-      clickPower: 1
+      clickPower: 1,
+      existOptions: ["exists", "notExist"],
+      existIndex: 0,
+      winnerOptions: ["exists", "notExist"],
+      winnerIndex: 1,
+      winner: "You Won!!!"
+
     }
   }
 
@@ -17,9 +23,6 @@ class App extends React.Component {
     this.setState({
       counter: counter + clickPower
     })
-    if(counter >= 100) {
-      window.alert("You won")
-    }
     // console.log(counter)
   }
 
@@ -43,15 +46,28 @@ class App extends React.Component {
 
   render() {
     // this.handleClick();
-    let { clickPower } = this.state
-    let { counter } = this.state
+    let { clickPower, counter, existIndex, existOptions, winnerIndex, winnerOptions } = this.state
+    let exists = existOptions[existIndex]
+    let winYet = winnerOptions[winnerIndex]
+    let victory = this.state.winner
+    if(this.state.counter >= 100) {
+      let { existIndex } = this.state
+      let { winnerIndex } = this.state
+      this.state.counter = 0;
+      this.state.clickPower = 1;
+      this.setState({
+        existIndex: existIndex + 1,
+        winnerIndex: winnerIndex - 1
+      })
+    }
 
     return (
         <div className="App">
           <p>Current Score</p>
           <p>{counter}</p>
-          <button className="clicker" onClick={this.addPoint}>{ clickPower }</button>
-          <button className="upgrader" onClick={this.upgradeButton}>Power Up by 1</button>
+          <button className={exists} onClick={this.addPoint}>{ clickPower }</button>
+          <button className={exists} onClick={this.upgradeButton}>Power Up by 1</button>
+          <p className={winYet}>{victory}</p>
         </div>
     );
   }
