@@ -7,7 +7,9 @@ class App extends React.Component {
     this.state = {
       counter: 0,
       flavor: 1,
-      cost: 5
+      cost: 5,
+      clickFlash: ["on", "off"],
+      clickFlashIndex: 0
     }
   }
 
@@ -48,19 +50,32 @@ class App extends React.Component {
     })
   }
 
-  render() {
-    let {counter, flavor, cost} = this.state
+  onClick = () => {
+    this.handleClick()
+    this.handleFlash()
+  }
 
+  handleFlash = () => {
+    let { clickFlashIndex } = this.state
+    this.setState({
+      clickFlashIndex: clickFlashIndex + 1
+    })
+  }
+
+  render() {
+    let {counter, flavor, cost, clickFlash, clickFlashIndex} = this.state
+
+    let flash = clickFlash[clickFlashIndex % 2]
     if (counter >= 10000) {
       return (
         <div className="App">
-          <div className="Counter">
+          <div className="counter">
             <h1>Clicky Sweats</h1>
             <h1>YOU WIN!</h1>
             <h2>Flavor Points: {counter}</h2>
           </div>
           <div className="image">
-            <img src="https://vignette.wikia.nocookie.net/tmnt/images/e/e8/Meatsweats_Profile_Pic.png/revision/latest/scale-to-width-down/640?cb=20190618031644" alt="Rupert Swaggart"></img>
+            <img id="meat" src="https://vignette.wikia.nocookie.net/tmnt/images/e/e8/Meatsweats_Profile_Pic.png/revision/latest/scale-to-width-down/640?cb=20190618031644" alt="Rupert Swaggart"></img>
           </div>
           <div className="button">
             <h3>Flavor MULTIPLIER: X{flavor}</h3>
@@ -71,12 +86,12 @@ class App extends React.Component {
     } else {
       return (
         <div className="App">
-          <div className="Counter">
+          <div className="counter">
             <h1>Clicky Sweats</h1>
             <h2>Flavor Points: {counter}</h2>
           </div>
           <div className="image">
-            <img onClick={this.handleClick} src="https://vignette.wikia.nocookie.net/tmnt/images/e/e8/Meatsweats_Profile_Pic.png/revision/latest/scale-to-width-down/640?cb=20190618031644" alt="Rupert Swaggart"></img>
+            <img id={flash} onClick={this.onClick} src="https://vignette.wikia.nocookie.net/tmnt/images/e/e8/Meatsweats_Profile_Pic.png/revision/latest/scale-to-width-down/640?cb=20190618031644" alt="Rupert Swaggart"></img>
           </div>
           <div className="button">
             <h3>Cost to UNLEASH: {cost}</h3>
