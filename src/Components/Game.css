@@ -1,0 +1,15 @@
+button {
+    padding: 10px 15px;
+    margin: 10px auto;
+    display: block;
+    border-radius: 7px;
+
+}
+
+strong {
+    text-decoration: underline;
+}
+
+h2 {
+    color: rgb(10, 153, 10);
+}
