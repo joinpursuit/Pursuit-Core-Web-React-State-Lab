@@ -43,12 +43,12 @@ class App extends React.Component {
 
   render() {
     let { score, incrementNum, pay } = this.state;
-    if (score >= 100) {
+    if (score >= 99) {
       return (
         <div className="App">
          <h1>Current Score: {score}</h1>
          <h1>You WON</h1>
-         <button onClick ={this.resetGame}> RESET</button>
+         <button onClick ={this.resetGame}> Play Again</button>
          </div>
       )
     }else {
