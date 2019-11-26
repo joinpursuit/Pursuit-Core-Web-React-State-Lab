@@ -64,7 +64,9 @@ render() {
     return(
       <div className="App">
         <p>Current Score: {counter}</p>
-        <button onClick={this.handleClick}>+{this.state.pay}</button>
+        <button onClick={this.handleClick}>+{this.state.pay}</button> 
+        <br></br>
+        <br></br>
         <button onClick={this.handleAddBy}>Pay 10 points to change from +{this.state.pay} to +{this.state.pay + 1}</button>
       </div>
     )
