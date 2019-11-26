@@ -16,7 +16,7 @@ class App extends React.Component {
       price: 10
     }
   }
-  handleClick = (event) => {
+  handleClick = () => {
     // console.log("the button was clicked", event)
     let counter = this.state.counter;
     let pay = this.state.pay;
@@ -25,7 +25,7 @@ class App extends React.Component {
       counter: counter + pay,
     })
   }
-handleAddBy = (event) => {
+handleAddBy = () => {
 let pay = this.state.pay;
 let price = this.state.price;
 let counter = this.state.counter;
@@ -42,7 +42,12 @@ else{
 }
 
 playAgain = () => {
-  window.location.reload()
+  // window.location.reload()
+  this.setState({
+    counter: 0,
+    pay: 1,
+    price: 10
+  })
 }
 
 render() {
