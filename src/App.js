@@ -44,33 +44,60 @@ class App extends React.Component {
     // console.log("Counter", counter, "ClickPower", clickPower)
   }
 
+  reset = () => {
+
+    // let counter = this.state.counter;
+    // let clickPower = this.state.clickPower;
+    this.setState({
+      counter: 0,
+      clickPower: 1,
+      winner: "You Won!!!"
+    })
+  }
+
   render() {
     // this.handleClick();
     let { clickPower, counter, existIndex, existOptions, winnerIndex, winnerOptions } = this.state
     let exists = existOptions[existIndex]
     let winYet = winnerOptions[winnerIndex]
     let victory = this.state.winner
-    if(this.state.counter >= 100) {
-      let { existIndex } = this.state
-      let { winnerIndex } = this.state
-      this.state.counter = 0;
-      this.state.clickPower = 1;
-      this.setState({
-        existIndex: existIndex + 1,
-        winnerIndex: winnerIndex - 1
-      })
-    }
 
-    return (
+
+    if(this.state.counter >= 100) {
+      return (
         <div className="App">
           <p>Current Score</p>
           <p>{counter}</p>
-          <button className={exists} onClick={this.addPoint}>{ clickPower }</button>
-          <button className={exists} onClick={this.upgradeButton}>Power Up by 1</button>
-          <p className={winYet}>{victory}</p>
+          <p>{victory}</p>
+          <button onClick={this.reset}>Restart Game</button>
+
         </div>
     );
+    } else {
+      return (
+        <div className="App">
+          <p>Current Score</p>
+          <p>{counter}</p>
+          
+          <button className={exists} onClick={this.addPoint}>{ clickPower }</button>
+          <button className={exists} onClick={this.upgradeButton}>Power Up by 1</button>
+
+        </div>
+    );
+    }
+    // if(this.state.counter >= 100) {
+    //   let { existIndex } = this.state
+    //   let { winnerIndex } = this.state
+
+    //   this.setState({
+    //     existIndex: existIndex + 1,
+    //     winnerIndex: winnerIndex - 1
+    //   })
+    // }
+
+
   }
 }
 
 export default App;
+
