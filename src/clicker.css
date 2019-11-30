@@ -1,0 +1,9 @@
+.clicker {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+button {
+	width: 200px;
+}
