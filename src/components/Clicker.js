@@ -4,12 +4,22 @@ class Clicker extends React.Component {
     
         state = { count: 0 };
         increase = {increase : 1}
-        // this.handleClick = this.handleClick.bind(this);
 
     handleClick = (e) => {
-        this.setState((prevState, props) => {
-            return {count: this.state.count + this.increase.increase}
-        })
+        if(this.state.count < 100) {
+            this.setState((prevState, props) => {
+                return {count: this.state.count + this.increase.increase}
+            })
+        } else {
+            alert("You won!")
+            this.setState((prevState, props) => {
+                return(
+                    this.state.count = 0,
+                    this.increase.increase = 1
+                    
+                ) 
+            })
+        }
     }
     pointIncrease = (e) => {
         if(this.state.count - 10 < 0) {
