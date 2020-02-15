@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+// import logo from './logo.svg';
+import Clicker from "./Components/Clicker";
+import Score from "./Components/CurrentScore";
+import Points from "./Components/Points";
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    counter: 1,
+    currentScore: 0
+  }
+  render() {
+    const {counter, currentScore} = this.state;
+    return (
+      <div className="App">
+        <Score currentScore={currentScore}/>
+        <Clicker counter={counter}/>
+      </div>
+    );
+  }
 }
 
 export default App;
