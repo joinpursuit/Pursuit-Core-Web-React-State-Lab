@@ -10,6 +10,9 @@ class Clicker extends React.Component {
             })
         } else {
             alert("You won!")
+            this.setState((prevState, props) => {
+                return {count: 0, increase: 1}
+            })
         }
     }
 
