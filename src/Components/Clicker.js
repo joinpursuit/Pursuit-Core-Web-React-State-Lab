@@ -18,7 +18,10 @@ class Clicker extends React.Component {
             alert("Not enough points")
         } else {
             this.setState((prevState, props) => {
-                return {count: this.state.count - 10}
+                return {
+                    count: this.state.count - 10, 
+                    increase: this.state.increase + 1
+                }
             })
         }
     }
@@ -27,9 +30,9 @@ class Clicker extends React.Component {
             <div>
             <h1>Welcome to the Clicker Game</h1>
             <h3>Current Score: {this.state.count}</h3>
-            <button onClick={this.handleClick}>+1</button>
+            <button onClick={this.handleClick}>{this.state.increase}</button>
             <br/>
-            <button onClick={this.increasePoints}>Pay 10 points to chance from +1 to +2</button>
+            <button onClick={this.increasePoints}>Pay 10 points to chance from {this.state.increase} to {this.state.increase + 1}</button>
             </div>
         )
     }
