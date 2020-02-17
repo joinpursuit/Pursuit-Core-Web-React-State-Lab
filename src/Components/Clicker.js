@@ -1,12 +1,12 @@
 import React from 'react';
 
 class Clicker extends React.Component {    
-    state = { count: 0 }
+    state = { count: 0, increase: 1 }
 
     handleClick = (e) => {
         if(this.state.count < 100) {
             this.setState((prevState, props) => {
-                return {count: this.state.count + 1}
+                return {count: this.state.count + this.state.increase}
             })
         } else {
             alert("You won!")
