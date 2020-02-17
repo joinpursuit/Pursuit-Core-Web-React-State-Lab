@@ -5,7 +5,7 @@ class Clicker extends React.Component {
 
   handleClick = e => {
     this.setState((prevState, props) => {
-      // this.handleWin();
+      this.handleWin();
       if (prevState.count + prevState.increase >= 100) {
         return { count: prevState.count + prevState.increase, win: true };
       } else {
@@ -26,6 +26,8 @@ class Clicker extends React.Component {
       }
     });
   };
+
+  handleWin = e => {};
 
   render() {
     let { count, increase } = this.state;
