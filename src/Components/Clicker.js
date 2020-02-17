@@ -13,6 +13,11 @@ class Clicker extends React.Component {
         }
     }
 
+    increasePoints = (e) => {
+        if(this.state.count - 10 < 0){
+            alert("Not enough points")
+        }
+    }
     render() {
         return(
             <div>
@@ -20,7 +25,7 @@ class Clicker extends React.Component {
             <h3>Current Score: {this.state.count}</h3>
             <button onClick={this.handleClick}>+1</button>
             <br/>
-            <button>Pay 10 points to chance from +1 to +2</button>
+            <button onClick={this.increasePoints}>Pay 10 points to chance from +1 to +2</button>
             </div>
         )
     }
