@@ -34,9 +34,9 @@ class Clicker extends React.Component {
             <div>
             <h1>Welcome to the Clicker Game</h1>
             <h3>Current Score: {count}</h3>
-            <button onClick={this.handleClick}> Plus {increase}</button>
+            <button onClick={this.handleClick}> + {increase}</button>
             <br/>
-            <button onClick={this.handleIncreasePoints}>Pay 10 points to chance from Plus {increase} to Plus {increase + 1}</button>
+            <button onClick={this.handleIncreasePoints}>Pay 10 points to change from + {increase} to + {increase + 1}</button>
             </div>
         )
     }
