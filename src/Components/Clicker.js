@@ -16,6 +16,10 @@ class Clicker extends React.Component {
     increasePoints = (e) => {
         if(this.state.count - 10 < 0){
             alert("Not enough points")
+        } else {
+            this.setState((prevState, props) => {
+                return {count: this.state.count - 10}
+            })
         }
     }
     render() {
