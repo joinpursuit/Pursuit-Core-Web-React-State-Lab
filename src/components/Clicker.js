@@ -34,8 +34,9 @@ class Clicker extends React.Component {
         let gameDisplay = document.querySelector("#gameDisplay");
         let winner = document.querySelector("#winner");
         let playAgainBtn = document.querySelector("#playAgainBtn");
-        gameDisplay.hidden = true;
         winner.innerHTML = "You won!!";
+        gameDisplay.hidden = true;
+        winner.hidden = false;
         playAgainBtn.hidden = false;
       }
     });
