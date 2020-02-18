@@ -3,7 +3,7 @@ import React from "react"
 
 class Game extends React.Component{
     state={
-        currentScore:99,
+        currentScore:0,
         currentStep:1,
         gameWon: "",
         showWin:"none"
@@ -12,12 +12,12 @@ class Game extends React.Component{
         this.setState({
             currentScore:this.state.currentScore+this.state.currentStep
         })
-        if(this.state.currentScore >= 100){
-            return this.handleWin()
+        if((this.state.currentScore+this.state.currentStep) >= 100){
+             this.handleWin()
         }
     }
     handleStepUpgrade=()=>{
-        if(this.state.currentScore>=10){
+        if((this.state.currentScore)>=10){
 
             this.setState({
                 currentScore:this.state.currentScore-10,
@@ -36,7 +36,7 @@ class Game extends React.Component{
     }
     handleRestart=()=>{
         this.setState({
-                currentScore:99,
+                currentScore:0,
                 currentStep:1,
                 gameWon: "",
                 showWin:"none"
