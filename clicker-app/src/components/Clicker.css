@@ -1,0 +1,10 @@
+.clicker {
+   display: flex;
+   flex-direction: column;
+  text-align: center;
+}
+
+button {
+   margin-bottom: 5px;
+   width: 30%
+}

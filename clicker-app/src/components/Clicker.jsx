@@ -1,13 +1,11 @@
 import React, { Component } from "react";
+import "../components/Clicker.css"
 
 class Clicker extends Component {
   state = {
     count: 0,
-    increment: 1
-    
+    increment: 1  
   };
-
-
 
   handleIncrement = () => {
     let { count, increment } = this.state;
@@ -40,7 +38,7 @@ class Clicker extends Component {
     let { count, increment } = this.state;
     
     return (
-      <div>
+      <div className="clicker">
         <h1>Current Score: {count}</h1>
         <button onClick={this.handleIncrement}>+{increment}</button>
         <button onClick={this.handlePayPoints}>Pay 10 points to go from +{increment} to +{increment+1}</button>
