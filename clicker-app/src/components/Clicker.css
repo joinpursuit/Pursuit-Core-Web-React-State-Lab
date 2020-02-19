@@ -1,10 +1,14 @@
 .clicker {
-   display: flex;
-   flex-direction: column;
   text-align: center;
 }
 
+#clickerBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 button {
-   margin-bottom: 5px;
-   width: 30%
+  margin-bottom: 5px;
+  width: 15%;
 }
