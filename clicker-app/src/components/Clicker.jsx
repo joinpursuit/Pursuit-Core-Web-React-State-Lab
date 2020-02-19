@@ -36,9 +36,6 @@ class Clicker extends Component {
 
   render() {
     let { count, increment } = this.state;
-    if(count >=100){
-       return <h1>You are a Winner!!!</h1>
-    }
     return (
       <div className="clicker">
         <h1>Current Score: {count}</h1>
@@ -46,6 +43,8 @@ class Clicker extends Component {
         <button onClick={this.handleIncrement}>+{increment}</button>
         <button onClick={this.handlePayPoints}>Pay 10 points to go from +{increment} to +{increment+1}</button>
         <button onClick={this.handleReset}>Reset</button>
+          {count >=100?<h1>You are a Winner!!!</h1>:"" }
+
         </div>
         
       </div>
