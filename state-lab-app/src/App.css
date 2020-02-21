@@ -1,7 +1,25 @@
 .App {
   text-align: center;
 }
+h1 {
+  padding-top: 40px;
+}
 
+.click {
+  display: flex;
+  flex-direction: column;
+  height: 230px;
+}
+
+.clickerItems {
+  margin: 0 auto;
+}
+/* button{
+  display: flex;
+  box-shadow: deepskyblue;
+  align-items: center;
+} */
+/* 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +53,6 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
+
+

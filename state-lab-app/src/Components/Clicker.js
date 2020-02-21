@@ -31,21 +31,22 @@ import React from 'react';
   render() {
     const isWinner = this.state.count >= 100
     return (
-      <div>
-       <h2>Current Score: {this.state.count} </h2> 
+      <div className="click">
+       <h1 className="clickerItems">Current Score: {this.state.count} </h1> 
+       <br/>
         {!isWinner && 
         <>
-        <button onClick={this.handleClick}>+{this.state.multiplier}</button>
+        <button className="clickerItems" onClick={this.handleClick}>+{this.state.multiplier}</button>
         <br/>
-        <button onClick={this.handlePayPoint}>Pay 10 points to change from +{this.state.multiplier} to +{this.state.count}</button>
+        <button className="clickerItems" onClick={this.handlePayPoint}>Pay 10 points to change from +{this.state.multiplier} to +{this.state.count}</button>
         </>
         }
         {isWinner && 
           <>
-          <p>
+          <p className="clickerItems">
           You win!
           </p>
-          <button onClick= {this.handleClickReset} >Play again</button>
+          <button className="clickerItems" onClick= {this.handleClickReset} >Play again</button>
           </> 
         }
        </div> 
