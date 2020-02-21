@@ -2,7 +2,7 @@ import React from 'react';
 
 const Clicker = (props) => {
     return(
-        <button>{props.counter}</button>
+        <button>{props.addend}</button>
     )
 }
 

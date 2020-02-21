@@ -2,7 +2,7 @@ import React from 'react';
 
 const Points = (props) => {
     return(
-        <button>Pay 10 points to change {props.counter} to {props.counter + 1}</button>
+        <button>Pay 10 points to change {props.addend} to {props.addend + 1}</button>
     )
 }
 
