@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 // import Clicker from "./Components/Clicker";
 // import Score from "./Components/CurrentScore";
-import Points from "./Components/Points";
+// import Points from "./Components/Points";
 import './App.css';
 
 class App extends Component {
@@ -39,14 +39,15 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <Points
+        {/* <Points
           addend={addend}
           currentScore={currentScore}
-        />
+        /> */}
         <h1>Current Score: {currentScore}</h1>
         <button onClick={this.handleIncrementor}>
-          + {addend}
+          +{addend}
         </button>
+        <br></br>
         <button onClick={this.handleAddend}>Pay 10 points to change {addend} to {addend + 1}</button>
       </div>
     );
