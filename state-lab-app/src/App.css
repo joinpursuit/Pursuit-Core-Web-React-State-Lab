@@ -1,0 +1,20 @@
+.App {
+  text-align: center;
+}
+
+h1 {
+  padding-top: 40px;
+}
+
+.click {
+  display: flex;
+  flex-direction: column;
+  height: 230px;
+}
+
+.clickerItems {
+  margin: 0 auto;
+}
+
+
+
