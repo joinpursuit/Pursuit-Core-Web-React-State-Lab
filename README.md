@@ -1,5 +1,13 @@
 # Pursuit-Core-Web-React-State-Lab
 
+### Completed MVP Screen Capture
+
+![My completed mvp screencap](./readme/screencap.png)
+
+---
+
+## Directions
+
 Build a simple clicker game.  It should have the following requirements:
 
 - Display the current score to the user
@@ -9,11 +17,17 @@ Build a simple clicker game.  It should have the following requirements:
 - When the user has 100 points, display a victory screen
 - Have a button that resets the game
 
-![clickerGame](./clickerGame.gif)
+![clickerGame](./readme/clickerGame.gif)
 
-# create-react-app boilerplate
+---
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
+
+# Create-react-app Boilerplate
+
+***This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).***
+
+---
 
 ## Available Scripts
 
